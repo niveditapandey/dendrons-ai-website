@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dendrons.ai - The Signal-to-Action Engine</title>
+    <meta name="description" content="Dendrons.ai builds AI products that help organizations find the right signals and turn them into action across media, stakeholder intelligence, conversion, and AI accountability.">
+    <meta name="google-site-verification" content="jUlW6XLLMHfY01XNBJ1n_NRVLCszxZfgVOAeO4F7eOI">
+    <link rel="canonical" href="https://dendrons.ai/">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="AI products, agentic AI, media intelligence, stakeholder research, AI voice agent, lead conversion, AI accountability, government AI, getHeard, getBookings, Dendrons Compass">
+    <meta name="author" content="Nivedita Pandey">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dendrons.ai/">
+    <meta property="og:title" content="Dendrons.ai - The Signal-to-Action Engine">
+    <meta property="og:description" content="Dendrons.ai builds AI products that help organizations find the right signals and turn them into action across media, stakeholder intelligence, conversion, and AI accountability.">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:site_name" content="Dendrons.ai">
+    <meta property="og:image" content="https://dendrons.ai/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dendrons.ai - The Signal-to-Action Engine">
+    <meta name="twitter:description" content="Agentic AI products for media intelligence, stakeholder research, lead conversion, and AI accountability. Supported by Google Cloud for Startups. Anthropic Claude Partner.">
+    <meta name="twitter:image" content="https://dendrons.ai/og-image.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://dendrons.ai/#organization",
+          "name": "Dendrons.ai",
+          "alternateName": "Sundarkaand Innovations Pvt. Ltd.",
+          "url": "https://dendrons.ai/",
+          "logo": "https://dendrons.ai/og-image.png",
+          "description": "Dendrons.ai builds agentic AI products that help organisations find the right signals and turn them into action — across media intelligence, stakeholder research, lead conversion, and AI accountability.",
+          "email": "np@dendrons.ai",
+          "founder": {
+            "@type": "Person",
+            "name": "Nivedita Pandey",
+            "url": "https://about.me/niveditapandey",
+            "alumniOf": "The Wharton School, University of Pennsylvania"
+          },
+          "sameAs": [
+            "https://skillai.academy"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "AI Products",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "SoftwareApplication",
+                  "name": "getHeard · Pulse",
+                  "description": "Media intelligence for government and public affairs. Converts raw monitoring data into prioritised alerts and response workflows.",
+                  "applicationCategory": "BusinessApplication"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "SoftwareApplication",
+                  "name": "getHeard · Voice",
+                  "description": "AI-powered stakeholder and market research at scale across Hindi, English, and regional Indian languages.",
+                  "applicationCategory": "BusinessApplication"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "SoftwareApplication",
+                  "name": "getBookings",
+                  "description": "AI voice agent that converts high-intent online searches into confirmed in-person visits.",
+                  "applicationCategory": "BusinessApplication"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "SoftwareApplication",
+                  "name": "Dendrons Compass",
+                  "description": "AI alignment and accountability initiative for regulated environments.",
+                  "applicationCategory": "BusinessApplication"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://dendrons.ai/#website",
+          "url": "https://dendrons.ai/",
+          "name": "Dendrons.ai",
+          "publisher": {
+            "@id": "https://dendrons.ai/#organization"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://dendrons.ai/#webpage",
+          "url": "https://dendrons.ai/",
+          "name": "Dendrons.ai - The Signal-to-Action Engine",
+          "description": "Dendrons.ai builds AI products that help organisations act on the right signals — from the media, from their stakeholders, and from people actively looking for them.",
+          "isPartOf": { "@id": "https://dendrons.ai/#website" },
+          "about": { "@id": "https://dendrons.ai/#organization" },
+          "dateModified": "2026-06-06"
+        }
+      ]
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 50%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #06b6d4;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 50%, #10b981 100%);
+            color: white;
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%25" height="100%25" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 15px !important;
+            opacity: 1 !important;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            opacity: 0.9 !important;
+            margin-bottom: 12px !important;
+        }
+
+        .hero-descriptor {
+            font-size: 17px;
+            opacity: 0.85 !important;
+            font-weight: 300;
+            max-width: 680px;
+        }
+
+        .hero-endline {
+            font-size: 15px;
+            opacity: 0.7 !important;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 8px !important;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Engine narrative strip */
+        .engine-strip {
+            background: linear-gradient(135deg, #1e40af 0%, #0891b2 50%, #059669 100%);
+            color: white;
+            padding: 40px 0;
+        }
+
+        .engine-inner {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .engine-step {
+            text-align: center;
+            padding: 0 32px;
+        }
+
+        .engine-step .step-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 6px;
+        }
+
+        .engine-step .step-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .engine-step .step-product {
+            font-size: 13px;
+            color: rgba(255,255,255,0.75);
+            margin-top: 4px;
+        }
+
+        .engine-arrow {
+            color: rgba(255,255,255,0.4);
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        #products {
+            background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1e3a8a;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #718096;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Product Cards */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            padding: 36px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-card:nth-child(1) { border-color: #60a5fa; }
+        .product-card:nth-child(2) { border-color: #22d3ee; }
+        .product-card:nth-child(3) { border-color: #34d399; }
+        .product-card:nth-child(4) { border-color: #a78bfa; }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb 0%, #06b6d4 50%, #10b981 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.2);
+        }
+
+        .product-card:nth-child(1):hover { border-color: #2563eb; }
+        .product-card:nth-child(2):hover { border-color: #06b6d4; }
+        .product-card:nth-child(3):hover { border-color: #10b981; }
+        .product-card:nth-child(4):hover { border-color: #7c3aed; }
+
+        .product-card:hover::before { transform: scaleX(1); }
+
+        .product-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 50%, #10b981 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 18px;
+        }
+
+        .product-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #1e3a8a;
+        }
+
+        .product-card .product-tagline {
+            font-size: 14px;
+            font-weight: 600;
+            color: #06b6d4;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .product-card p {
+            color: #718096;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        .product-card .product-for {
+            font-size: 13px;
+            color: #94a3b8;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 14px;
+            margin-top: 4px;
+        }
+
+        .product-card .product-for strong {
+            color: #64748b;
+        }
+
+        .compass-badge {
+            display: inline-block;
+            background: #f5f3ff;
+            color: #6d28d9;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 10px;
+        }
+
+        /* Industries Section */
+        .industries {
+            background: linear-gradient(180deg, #cffafe 0%, #a7f3d0 100%);
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 50px;
+        }
+
+        .industry-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px 20px 22px;
+            border: 0.5px solid rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+        }
+
+        .industry-icon-wrap {
+            width: 32px;
+            height: 32px;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 6px;
+            flex-shrink: 0;
+        }
+
+        /* Col 1: deep navy */
+        .ic-navy { background: #B5D4F4; }
+        /* Col 2: soft purple */
+        .ic-purple { background: #EEEDFE; }
+        /* Col 3: dark teal */
+        .ic-teal { background: #9FE1CB; }
+        /* Col 4: forest green */
+        .ic-green { background: #C0DD97; }
+
+        .industry-card h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e3a8a;
+            line-height: 1.3;
+            margin: 0;
+        }
+
+        .industry-card p {
+            color: #718096;
+            font-size: 12px;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .industry-pill {
+            display: inline-block;
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .pill-navy   { background: #B5D4F4; color: #042C53; }
+        .pill-purple { background: #EEEDFE; color: #3C3489; }
+        .pill-teal   { background: #9FE1CB; color: #04342C; }
+        .pill-green  { background: #C0DD97; color: #173404; }
+
+        /* Callout Boxes */
+        .callout-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .callout-box {
+            border-radius: 12px;
+            padding: 35px;
+            color: white;
+            position: relative;
+        }
+
+        .callout-box-1 {
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .callout-box-2 {
+            background: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+        }
+
+        .callout-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .callout-box p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .callout-box strong {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .callout-box a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+            transition: all 0.3s;
+        }
+
+        .callout-box a:hover {
+            border-bottom-color: white;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(180deg, #ffffff 0%, #f0fdfa 100%);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-content h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            margin-top: 40px;
+            color: #1e3a8a;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .about-content a {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 2px solid #2563eb;
+            transition: all 0.3s;
+        }
+
+        .about-content a:hover {
+            color: #1d4ed8;
+            border-bottom-color: #1d4ed8;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 50%, #10b981 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #2563eb;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(180deg, #1e3a8a 0%, #0e7490 100%);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            color: #a0aec0;
+            line-height: 1.7;
+        }
+
+        .footer-links h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            display: block;
+            padding: 8px 0;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #22d3ee;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: #e0e7ff;
+        }
+
+        /* Responsive */
+        @media (max-width: 960px) {
+            .industries-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 18px; }
+            nav ul { display: none; }
+            .section-header h2 { font-size: 32px; }
+            .footer-content { grid-template-columns: 1fr; gap: 40px; }
+            .products-grid,
+            .callout-boxes { grid-template-columns: 1fr; }
+            .industries-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .engine-inner { gap: 0; }
+            .engine-step { padding: 8px 16px; }
+            .engine-arrow { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            .industries-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Dendrons.ai</div>
+            <ul>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#industries">Industries</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="https://skillai.academy" target="_blank">SkillAI Academy</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">Supported by Google Cloud for Startups &nbsp;·&nbsp; Anthropic Claude Partner</div>
+                <h1>Dendrons.ai</h1>
+                <p class="tagline">We are an agentic AI product company.</p>
+                <p class="subtitle">We build solutions for finding the right signals and acting on them.</p>
+                <p class="hero-descriptor">getHeard listens. getBookings converts. Compass aligns.<br>One engine, running continuously.</p>
+                <p class="hero-endline">Discover. Act. Align.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engine narrative strip -->
+    <div class="engine-strip">
+        <div class="container">
+            <div class="engine-inner">
+                <div class="engine-step">
+                    <div class="step-label">Step 1</div>
+                    <div class="step-name">Signals come in</div>
+                    <div class="step-product">Media · Stakeholders · Search intent</div>
+                </div>
+                <div class="engine-arrow">→</div>
+                <div class="engine-step">
+                    <div class="step-label">Step 2</div>
+                    <div class="step-name">Intelligence filters</div>
+                    <div class="step-product">Prioritise · Route · Synthesise</div>
+                </div>
+                <div class="engine-arrow">→</div>
+                <div class="engine-step">
+                    <div class="step-label">Step 3</div>
+                    <div class="step-name">Action follows</div>
+                    <div class="step-product">Respond · Research · Convert · Align</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Three products. One engine.</h2>
+                <p>The engine runs continuously. getHeard listens. getBookings converts. Compass keeps everything aligned.</p>
+            </div>
+
+            <div class="products-grid">
+
+                <!-- getHeard Pulse -->
+                <div class="product-card">
+                    <div class="product-icon">📡</div>
+                    <h3>getHeard · Pulse</h3>
+                    <div class="product-tagline">Mentions to Momentum</div>
+                    <p>Media intelligence for government and public affairs. Converts raw monitoring data into prioritised alerts, departmental action routing, and response workflows - so the window to respond never closes.</p>
+                    <div class="product-for">
+                        <strong>For:</strong> State communications departments, Chief Ministers' offices, IPRD, PSUs, public affairs teams, listed companies in regulated sectors
+                    </div>
+                </div>
+
+                <!-- getHeard Voice -->
+                <div class="product-card">
+                    <div class="product-icon">🎙️</div>
+                    <h3>getHeard · Voice</h3>
+                    <div class="product-tagline">Many voices. One verdict.</div>
+                    <p>AI-powered stakeholder and market research at scale. Five AI agents handle everything from questionnaire design to fieldwork to final report - in Hindi, English, and regional Indian languages. You give it a brief. It delivers a verdict.</p>
+                    <div class="product-for">
+                        <strong>For:</strong> Government, political offices, FMCG, financial services, healthcare, NGOs and development sector
+                    </div>
+                </div>
+
+                <!-- getBookings -->
+                <div class="product-card">
+                    <div class="product-icon">📅</div>
+                    <h3>getBookings</h3>
+                    <div class="product-tagline">Search to visit</div>
+                    <p>High-intent online searches converted to confirmed in-person first visits. An AI voice agent calls the prospect within minutes of their search signal, confirms their interest, and books the visit before they move on.</p>
+                    <div class="product-for">
+                        <strong>For:</strong> Real estate, healthcare, education, automotive, retail and jewellery
+                    </div>
+                </div>
+
+                <!-- Dendrons Compass -->
+                <div class="product-card">
+                    <div class="product-icon">🧭</div>
+                    <span class="compass-badge">Initiative</span>
+                    <h3>Dendrons Compass</h3>
+                    <div class="product-tagline">True north for your AI</div>
+                    <p>An initiative in AI alignment and accountability for regulated environments. The question it starts from: is your AI doing the right thing - and can you prove it? Being shaped by the problems our clients are actually facing.</p>
+                    <div class="product-for">
+                        <strong>For:</strong> Banks, NBFCs, insurers, hospitals, government - any regulated organisation deploying AI
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section id="industries" class="industries">
+        <div class="container">
+            <div class="section-header">
+                <h2>Where we work</h2>
+                <p>Eight sectors across public, regulated, and high-intent markets where acting on the right signal matters most.</p>
+            </div>
+
+            <div class="industries-grid">
+
+                <!-- Col 1: Navy -->
+                <div class="industry-card">
+                    <div class="industry-icon-wrap ic-navy">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="8" width="12" height="6" rx="1" stroke="#042C53" stroke-width="1.2"/><path d="M5 8V6a3 3 0 016 0v2" stroke="#042C53" stroke-width="1.2"/><circle cx="8" cy="4" r="1.5" fill="#042C53"/></svg>
+                    </div>
+                    <h3>Government &amp; public sector</h3>
+                    <p>State comms, CMs' offices, PSUs, citizen research</p>
+                    <span class="industry-pill pill-navy">Pulse · Voice · Compass</span>
+                </div>
+
+                <!-- Col 2: Purple -->
+                <div class="industry-card">
+                    <div class="industry-icon-wrap ic-purple">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13V7l5-4 5 4v6" stroke="#3C3489" stroke-width="1.2" stroke-linejoin="round"/><rect x="6" y="9" width="4" height="4" rx="0.5" stroke="#3C3489" stroke-width="1.1"/></svg>
+                    </div>
+                    <h3>Political &amp; electoral</h3>
+                    <p>Voter sentiment, issue mapping, district-level feedback</p>
+                    <span class="industry-pill pill-purple">Voice</span>
+                </div>
+
+                <!-- Col 3: Teal -->
+                <div class="industry-card">
+                    <div class="industry-icon-wrap ic-teal">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="9" rx="1.2" stroke="#04342C" stroke-width="1.2"/><path d="M5 4V3a1 1 0 012 0v1M9 4V3a1 1 0 012 0v1" stroke="#04342C" stroke-width="1.1"/><path d="M2 7h12" stroke="#04342C" stroke-width="1"/></svg>
+                    </div>
+                    <h3>Financial services</h3>
+                    <p>Borrower research, agent feedback, AI accountability</p>
+                    <span class="industry-pill pill-teal">Voice · Compass</span>
+                </div>
+
+                <!-- Col 4: Green -->
+                <div class="industry-card">
+                    <div class="industry-icon-wrap ic-green">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2a3 3 0 100 6 3 3 0 000-6z" stroke="#173404" stroke-width="1.2"/><path d="M3 14c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="#173404" stroke-width="1.2" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>Healthcare</h3>
+                    <p>Patient research, ASHA/ANM networks, specialist bookings</p>
+                    <span class="industry-pill pill-green">Voice · getBookings · Compass</span>
+                </div>
+
+                <!-- Col 1: Navy -->
+                <div class="industry-card">
+                    <div class="industry-icon-wrap ic-navy">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.2" stroke="#042C53" stroke-width="1.2"/><path d="M2 7h12M6 7v6" stroke="#042C53" stroke-width="1"/></svg>
+                    </div>
+                    <h3>Real estate</h3>
+                    <p>High-intent searches converted to confirmed site visits</p>
+                    <span class="industry-pill pill-navy">getBookings</span>
+                </div>
+
+                <!-- Col 2: Purple -->
+                <div class="industry-card">
+                    <div class="industry-icon-wrap ic-purple">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 12l3-4 3 3 2-3 4 4" stroke="#3C3489" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/><rect x="2" y="2" width="12" height="10" rx="1.2" stroke="#3C3489" stroke-width="1.2"/></svg>
+                    </div>
+                    <h3>Education</h3>
+                    <p>Admissions intent converted to campus visits</p>
+                    <span class="industry-pill pill-purple">getBookings</span>
+                </div>
+
+                <!-- Col 3: Teal -->
+                <div class="industry-card">
+                    <div class="industry-icon-wrap ic-teal">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13h10M5 13V7l3-4 3 4v6" stroke="#04342C" stroke-width="1.2" stroke-linejoin="round"/><path d="M7 10h2" stroke="#04342C" stroke-width="1.1" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>Retail &amp; consumer goods</h3>
+                    <p>Jewellery, FMCG, in-store bookings &amp; Tier 2/3 research</p>
+                    <span class="industry-pill pill-teal">getBookings · Voice</span>
+                </div>
+
+                <!-- Col 4: Green -->
+                <div class="industry-card">
+                    <div class="industry-icon-wrap ic-green">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="4.5" cy="10.5" r="2" stroke="#173404" stroke-width="1.2"/><circle cx="11.5" cy="10.5" r="2" stroke="#173404" stroke-width="1.2"/><path d="M2.5 10.5L5 6h6l2.5 4.5" stroke="#173404" stroke-width="1.2" stroke-linejoin="round"/><path d="M5 6l1-3h4l1 3" stroke="#173404" stroke-width="1" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Automotive</h3>
+                    <p>High-intent browsing converted to test drive bookings</p>
+                    <span class="industry-pill pill-green">getBookings</span>
+                </div>
+
+            </div>
+
+            <!-- Callout Boxes -->
+            <div class="callout-boxes">
+                <div class="callout-box callout-box-1">
+                    <span class="callout-icon">🧭</span>
+                    <p><strong>Working on AI accountability?</strong> If you are building AI systems in a regulated environment and wrestling with questions of fairness, audit, or compliance - Compass is being shaped by the problems our clients are actually facing. Reach out: <a href="mailto:np@dendrons.ai">np@dendrons.ai</a></p>
+                </div>
+
+                <div class="callout-box callout-box-2">
+                    <span class="callout-icon">💡</span>
+                    <p><strong>AI Capability Building &amp; Training</strong> Visit <a href="https://skillai.academy" target="_blank">SkillAI Academy</a> for hands-on learning and capability building.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Dendrons.ai</h2>
+            </div>
+
+            <div class="about-content">
+                <p>Dendrons.ai builds AI products that help organisations act on the right signals - from the media, from their stakeholders, and from the people actively looking for them. Our products are informed by real-world experience across government, financial services, healthcare, education, and consumer sectors.</p>
+
+                <p>Dendrons.ai is supported by Google Cloud for Startups and is an Anthropic Claude Partner.</p>
+
+                <h3>Our Founder</h3>
+
+                <p>Dendrons.ai was founded by <a href="https://about.me/niveditapandey" target="_blank">Nivedita Pandey</a>, an AI and Digital Innovation Leader with a Wharton MBA (Joseph Wharton Scholar) and a distinction in Computer Science Engineering, with 16 years of experience building digital products, platforms, and businesses across US, UK, and Asian markets.</p>
+
+                <p>Nivedita's global career spans launching new physical and digital products at Estée Lauder in New York, working with MNCs and startups in London, launching India's first digital gold product, and building and scaling an Asia-wide multimillion-dollar Private Capital business vertical at Microsoft in Singapore.</p>
+
+                <p>Her expertise has been leveraged by corporates (Microsoft, HSBC, EY, Estée Lauder), by governments and multilaterals (World Bank, Reserve Bank Innovation Hub, India's Central and State governments), and by startups backed by leading VCs.</p>
+
+                <p>Her work has been recognised globally - at UN Women New York (top 10 of ~450 global pitches for innovative tech solution), at British Telecom London (1st prize for most innovative pitch), by the State Chief Secretary in India (for her leadership and execution excellence in DBT as Prime Minister's Fellow), at Microsoft Singapore (APAC Accelerator Award), and by the Singapore government as a high-calibre innovator and entrepreneur.</p>
+
+                <p>Startups founded by her in the past have been incubated at Penn Incubator (backed by National Science Foundation, USA) and Antler Singapore (top 3% of global applicants).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta">
+        <div class="container">
+            <h2>Act on the right signal.</h2>
+            <p>Tell us who you need to reach, research, or respond to.</p>
+            <a href="mailto:np@dendrons.ai" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Dendrons.ai</h3>
+                    <p>The signal-to-action engine.<br>Heard. Reached. Trusted.<br>Supported by Google Cloud for Startups.<br>Anthropic Claude Partner.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#products">getHeard · Pulse</a></li>
+                        <li><a href="#products">getHeard · Voice</a></li>
+                        <li><a href="#products">getBookings</a></li>
+                        <li><a href="#products">Dendrons Compass</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:np@dendrons.ai">np@dendrons.ai</a></li>
+                        <li><a href="https://skillai.academy" target="_blank">SkillAI Academy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dendrons.ai · Sundarkaand Innovations Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
