@@ -38,7 +38,7 @@
           "alternateName": "Sundarkaand Innovations Pvt. Ltd.",
           "url": "https://dendrons.ai/",
           "logo": "https://dendrons.ai/og-image.png",
-          "description": "Dendrons.ai builds agentic AI products that help organisations find the right signals and turn them into action — across media intelligence, stakeholder research, lead conversion, and AI accountability.",
+          "description": "Dendrons.ai builds agentic AI products that help organisations find the right signals and turn them into action - across media intelligence, stakeholder research, lead conversion, and AI accountability.",
           "email": "np@dendrons.ai",
           "founder": {
             "@type": "Person",
@@ -106,7 +106,7 @@
           "@id": "https://dendrons.ai/#webpage",
           "url": "https://dendrons.ai/",
           "name": "Dendrons.ai - The Signal-to-Action Engine",
-          "description": "Dendrons.ai builds AI products that help organisations act on the right signals — from the media, from their stakeholders, and from people actively looking for them.",
+          "description": "Dendrons.ai builds AI products that help organisations act on the right signals - from the media, from their stakeholders, and from people actively looking for them.",
           "isPartOf": { "@id": "https://dendrons.ai/#website" },
           "about": { "@id": "https://dendrons.ai/#organization" },
           "dateModified": "2026-06-06"
@@ -332,12 +332,57 @@
             margin: 0 auto;
         }
 
+        /* Product Lines */
+        .product-line {
+            margin-top: 60px;
+        }
+
+        .product-line + .product-line {
+            margin-top: 72px;
+            padding-top: 56px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .line-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+
+        .line-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 20px;
+            white-space: nowrap;
+            margin-top: 4px;
+        }
+
+        .line-badge-intelligence { background: #dbeafe; color: #1e40af; }
+        .line-badge-conversion   { background: #d1fae5; color: #065f46; }
+        .line-badge-governance   { background: #ede9fe; color: #5b21b6; }
+
+        .line-meta h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 4px;
+        }
+
+        .line-meta p {
+            font-size: 15px;
+            color: #718096;
+        }
+
         /* Product Cards */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 28px;
-            margin-top: 50px;
         }
 
         .product-card {
@@ -774,26 +819,26 @@
         </div>
     </section>
 
-    <!-- Engine narrative strip -->
+    <!-- Three lines strip -->
     <div class="engine-strip">
         <div class="container">
             <div class="engine-inner">
                 <div class="engine-step">
-                    <div class="step-label">Step 1</div>
-                    <div class="step-name">Signals come in</div>
-                    <div class="step-product">Media · Stakeholders · Search intent</div>
+                    <div class="step-label">Intelligence line</div>
+                    <div class="step-name">getHeard</div>
+                    <div class="step-product">Pulse · Voice</div>
                 </div>
-                <div class="engine-arrow">→</div>
+                <div class="engine-arrow">·</div>
                 <div class="engine-step">
-                    <div class="step-label">Step 2</div>
-                    <div class="step-name">Intelligence filters</div>
-                    <div class="step-product">Prioritise · Route · Synthesise</div>
+                    <div class="step-label">Conversion line</div>
+                    <div class="step-name">getBookings</div>
+                    <div class="step-product">Search to visit</div>
                 </div>
-                <div class="engine-arrow">→</div>
+                <div class="engine-arrow">·</div>
                 <div class="engine-step">
-                    <div class="step-label">Step 3</div>
-                    <div class="step-name">Action follows</div>
-                    <div class="step-product">Respond · Research · Convert · Align</div>
+                    <div class="step-label">Governance line</div>
+                    <div class="step-name">Compass</div>
+                    <div class="step-product">Compass · aiReady</div>
                 </div>
             </div>
         </div>
@@ -803,74 +848,99 @@
     <section id="products">
         <div class="container">
             <div class="section-header">
-                <h2>Three products. One engine.</h2>
-                <p>The engine runs continuously. getHeard listens. getBookings converts. Compass keeps everything aligned.</p>
+                <h2>Three lines. One company.</h2>
+                <p>Each line has a distinct buyer, a distinct problem, and a distinct motion. Together they cover the full arc from intelligence to conversion to governance.</p>
             </div>
 
-            <div class="products-grid">
-
-                <!-- getHeard Pulse -->
-                <div class="product-card">
-                    <div class="product-icon">📡</div>
-                    <h3>getHeard · Pulse</h3>
-                    <div class="product-tagline">Mentions to Momentum</div>
-                    <p>Media intelligence for government and public affairs. Converts raw monitoring data into prioritised alerts, departmental action routing, and response workflows - so the window to respond never closes.</p>
-                    <div class="product-for">
-                        <strong>For:</strong> State communications departments, Chief Ministers' offices, IPRD, PSUs, public affairs teams, listed companies in regulated sectors
+            <!-- LINE 1: INTELLIGENCE -->
+            <div class="product-line">
+                <div class="line-header">
+                    <span class="line-badge line-badge-intelligence">Intelligence line</span>
+                    <div class="line-meta">
+                        <h3>getHeard - Know what's being said. Know what people actually think.</h3>
+                        <p>For government, public affairs, and research teams who need to act on signals from media and stakeholders.</p>
                     </div>
-                    <a href="https://getheardpulse.dendrons.ai" class="product-link" target="_blank" rel="noopener">See it in action →</a>
                 </div>
-
-                <!-- getHeard Voice -->
-                <div class="product-card">
-                    <div class="product-icon">🎙️</div>
-                    <h3>getHeard · Voice</h3>
-                    <div class="product-tagline">Many voices. One verdict.</div>
-                    <p>AI-powered stakeholder and market research at scale. Five AI agents handle everything from questionnaire design to fieldwork to final report - in Hindi, English, and regional Indian languages. You give it a brief. It delivers a verdict.</p>
-                    <div class="product-for">
-                        <strong>For:</strong> Government, political offices, FMCG, financial services, healthcare, NGOs and development sector
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-icon">📡</div>
+                        <h3>getHeard · Pulse</h3>
+                        <div class="product-tagline">Mentions to Momentum</div>
+                        <p>Media intelligence for government and public affairs. Converts raw monitoring data into prioritised alerts, departmental action routing, and response workflows - so the window to respond never closes.</p>
+                        <div class="product-for">
+                            <strong>For:</strong> State communications departments, Chief Ministers' offices, IPRD, PSUs, public affairs teams, listed companies in regulated sectors
+                        </div>
+                        <a href="https://getheardpulse.dendrons.ai" class="product-link" target="_blank" rel="noopener">See it in action →</a>
                     </div>
-                    <a href="https://getheardvoice.dendrons.ai" class="product-link" target="_blank" rel="noopener">See it in action →</a>
-                </div>
-
-                <!-- getBookings -->
-                <div class="product-card">
-                    <div class="product-icon">📅</div>
-                    <h3>getBookings</h3>
-                    <div class="product-tagline">Search to visit</div>
-                    <p>High-intent online searches converted to confirmed in-person first visits. An AI voice agent calls the prospect within minutes of their search signal, confirms their interest, and books the visit before they move on.</p>
-                    <div class="product-for">
-                        <strong>For:</strong> Real estate, healthcare, education, automotive, retail and jewellery
+                    <div class="product-card">
+                        <div class="product-icon">🎙️</div>
+                        <h3>getHeard · Voice</h3>
+                        <div class="product-tagline">Many voices. One verdict.</div>
+                        <p>AI-powered stakeholder and market research at scale. Five AI agents handle everything from questionnaire design to fieldwork to final report - in Hindi, English, and regional Indian languages. You give it a brief. It delivers a verdict.</p>
+                        <div class="product-for">
+                            <strong>For:</strong> Government, political offices, FMCG, financial services, healthcare, NGOs and development sector
+                        </div>
+                        <a href="https://getheardvoice.dendrons.ai" class="product-link" target="_blank" rel="noopener">See it in action →</a>
                     </div>
-                    <a href="https://getbookings.dendrons.ai" class="product-link" target="_blank" rel="noopener">See it in action →</a>
                 </div>
+            </div>
 
-                <!-- Dendrons Compass -->
-                <div class="product-card">
-                    <div class="product-icon">🧭</div>
-                    <span class="compass-badge">Live</span>
-                    <h3>Dendrons Compass</h3>
-                    <div class="product-tagline">True north for your AI</div>
-                    <p>AI governance audit and readiness, mapped against RBI, DPDP, MAS FEAT, SR 11-7, FCA and the EU AI Act. A 30-minute assessment produces a board-ready gap analysis, maturity scorecard, and 90-day remediation roadmap.</p>
-                    <div class="product-for">
-                        <strong>For:</strong> Banks, NBFCs, insurers, hospitals, government - any regulated organisation deploying AI
+            <!-- LINE 2: CONVERSION -->
+            <div class="product-line">
+                <div class="line-header">
+                    <span class="line-badge line-badge-conversion">Conversion line</span>
+                    <div class="line-meta">
+                        <h3>getBookings - Turn high-intent searches into confirmed visits.</h3>
+                        <p>For sales-led businesses where the gap between online interest and in-person commitment costs revenue every day.</p>
                     </div>
-                    <a href="https://compass.dendrons.ai" class="product-link" target="_blank" rel="noopener">Start free assessment →</a>
                 </div>
-
-                <!-- Dendrons aiReady -->
-                <div class="product-card">
-                    <div class="product-icon">📈</div>
-                    <span class="compass-badge">Live</span>
-                    <h3>Dendrons aiReady</h3>
-                    <div class="product-tagline">Ready for AI? Your data decides.</div>
-                    <p>AI readiness assessment across five domains - with data readiness weighted heaviest, because that is where most AI initiatives quietly fail. A 20-minute assessment produces a readiness score, data sub-score, and a 90-day plan.</p>
-                    <div class="product-for">
-                        <strong>For:</strong> Any organisation planning AI adoption - financial services, retail, manufacturing, technology, healthcare, government
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-icon">📅</div>
+                        <h3>getBookings</h3>
+                        <div class="product-tagline">Search to visit</div>
+                        <p>High-intent online searches converted to confirmed in-person first visits. An AI voice agent calls the prospect within minutes of their search signal, confirms their interest, and books the visit before they move on.</p>
+                        <div class="product-for">
+                            <strong>For:</strong> Real estate, healthcare, education, automotive, retail and jewellery
+                        </div>
+                        <a href="https://getbookings.dendrons.ai" class="product-link" target="_blank" rel="noopener">See it in action →</a>
                     </div>
-                    <a href="https://aiready.dendrons.ai" class="product-link" target="_blank" rel="noopener">Start free assessment →</a>
                 </div>
+            </div>
 
+            <!-- LINE 3: GOVERNANCE -->
+            <div class="product-line">
+                <div class="line-header">
+                    <span class="line-badge line-badge-governance">Governance line</span>
+                    <div class="line-meta">
+                        <h3>Compass - Know if you're ready. Know if you're compliant.</h3>
+                        <p>For regulated organisations planning or already deploying AI - from pre-adoption readiness to ongoing governance and audit.</p>
+                    </div>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-icon">📈</div>
+                        <span class="compass-badge">Live</span>
+                        <h3>Dendrons aiReady</h3>
+                        <div class="product-tagline">Start here - Ready for AI? Your data decides.</div>
+                        <p>AI readiness assessment across five domains - with data readiness weighted heaviest, because that is where most AI initiatives quietly fail. A 20-minute assessment produces a readiness score, data sub-score, and a 90-day plan.</p>
+                        <div class="product-for">
+                            <strong>For:</strong> Any organisation planning AI adoption - financial services, retail, manufacturing, technology, healthcare, government
+                        </div>
+                        <a href="https://aiready.dendrons.ai" class="product-link" target="_blank" rel="noopener">Start free assessment →</a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-icon">🧭</div>
+                        <span class="compass-badge">Live</span>
+                        <h3>Dendrons Compass</h3>
+                        <div class="product-tagline">Then go deeper - True north for your AI.</div>
+                        <p>AI governance audit mapped against RBI, DPDP, MAS FEAT, SR 11-7, FCA and the EU AI Act. A 30-minute assessment produces a board-ready gap analysis, maturity scorecard, and 90-day remediation roadmap.</p>
+                        <div class="product-for">
+                            <strong>For:</strong> Banks, NBFCs, insurers, hospitals, government - any regulated organisation deploying AI
+                        </div>
+                        <a href="https://compass.dendrons.ai" class="product-link" target="_blank" rel="noopener">Start free assessment →</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
