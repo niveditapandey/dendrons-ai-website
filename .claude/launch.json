@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "compass-dev",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd '/Users/niveditapandey/Documents/AI Projects/compass' && npm run dev"],
+      "port": 3000,
+      "autoPort": true
+    }
+  ]
+}

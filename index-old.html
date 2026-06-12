@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dendrons AI - Responsible AI Products for High-Trust Environments</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 50%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #06b6d4;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 50%, #10b981 100%);
+            color: white;
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .tagline {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 15px !important;
+            opacity: 1 !important;
+            letter-spacing: 0.5px;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            opacity: 0.9 !important;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        #products {
+            background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1e3a8a;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: #718096;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Product Cards */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .product-card:nth-child(1) {
+            border-color: #60a5fa;
+        }
+        
+        .product-card:nth-child(2) {
+            border-color: #22d3ee;
+        }
+        
+        .product-card:nth-child(3) {
+            border-color: #34d399;
+        }
+        
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb 0%, #06b6d4 50%, #10b981 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.25);
+        }
+        
+        .product-card:nth-child(1):hover {
+            border-color: #2563eb;
+        }
+        
+        .product-card:nth-child(2):hover {
+            border-color: #06b6d4;
+        }
+        
+        .product-card:nth-child(3):hover {
+            border-color: #10b981;
+        }
+        
+        .product-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .product-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 50%, #10b981 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .product-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1e3a8a;
+        }
+        
+        .product-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #06b6d4;
+        }
+        
+        .product-card p {
+            color: #718096;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .product-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .product-list li {
+            padding: 6px 0;
+            color: #4a5568;
+            font-size: 15px;
+        }
+        
+        /* Industries Section */
+        .industries {
+            background: linear-gradient(180deg, #cffafe 0%, #a7f3d0 100%);
+        }
+        
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+        
+        .industry-card {
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .industry-card:nth-child(1) {
+            border-color: #3b82f6;
+        }
+        
+        .industry-card:nth-child(2) {
+            border-color: #2563eb;
+        }
+        
+        .industry-card:nth-child(3) {
+            border-color: #06b6d4;
+        }
+        
+        .industry-card:nth-child(4) {
+            border-color: #10b981;
+        }
+        
+        .industry-card:nth-child(5) {
+            border-color: #059669;
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(6, 182, 212, 0.2);
+        }
+        
+        .industry-card:nth-child(1):hover {
+            border-color: #1d4ed8;
+        }
+        
+        .industry-card:nth-child(2):hover {
+            border-color: #1e40af;
+        }
+        
+        .industry-card:nth-child(3):hover {
+            border-color: #0891b2;
+        }
+        
+        .industry-card:nth-child(4):hover {
+            border-color: #059669;
+        }
+        
+        .industry-card:nth-child(5):hover {
+            border-color: #047857;
+        }
+        
+        .industry-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .industry-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1e3a8a;
+        }
+        
+        .industry-card p {
+            color: #718096;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        /* Callout Boxes */
+        .callout-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+        
+        .callout-box {
+            border-radius: 12px;
+            padding: 35px;
+            color: white;
+            position: relative;
+        }
+        
+        .callout-box-1 {
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .callout-box-2 {
+            background: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+        }
+        
+        .callout-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .callout-box p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .callout-box strong {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+        
+        .callout-box a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+            transition: all 0.3s;
+        }
+        
+        .callout-box a:hover {
+            border-bottom-color: white;
+        }
+        
+        /* About Section */
+        .about {
+            background: linear-gradient(180deg, #ffffff 0%, #f0fdfa 100%);
+        }
+        
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .about-content h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            margin-top: 40px;
+            color: #1e3a8a;
+        }
+        
+        .about-content p {
+            font-size: 18px;
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        .about-content a {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 2px solid #2563eb;
+            transition: all 0.3s;
+        }
+        
+        .about-content a:hover {
+            color: #1d4ed8;
+            border-bottom-color: #1d4ed8;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 50%, #10b981 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #2563eb;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(180deg, #1e3a8a 0%, #0e7490 100%);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-brand h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-brand p {
+            color: #a0aec0;
+            line-height: 1.7;
+        }
+        
+        .footer-links h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            display: block;
+            padding: 8px 0;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #22d3ee;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: #e0e7ff;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .section-header h2 {
+                font-size: 32px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .products-grid,
+            .industries-grid,
+            .callout-boxes {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Dendrons AI</div>
+            <ul>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#industries">Industries</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="https://skillai.academy" target="_blank">SkillAI Academy</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">Supported by Google Cloud for Startups</div>
+                <h1>Dendrons AI</h1>
+                <p class="tagline">From Vision to Value</p>
+                <p class="subtitle">Responsible AI Products for High-Trust Environments</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Products</h2>
+                <p>We build responsible AI products through our governance suite, engagement platform, and vertical solutions</p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Governance Suite -->
+                <div class="product-card">
+                    <div class="product-icon">🎯</div>
+                    <h3>Governance Suite</h3>
+                    <h4>Dendrons Compass</h4>
+                    <p>AI compliance and safety platform that assesses whether your AI implementations are safe, fair, and compliant with regulatory requirements and responsible AI principles.</p>
+                </div>
+
+                <!-- Engagement Suite -->
+                <div class="product-card">
+                    <div class="product-icon">📣</div>
+                    <h3>Engagement Suite</h3>
+                    <h4>GetHeard</h4>
+                    <p>Voice of stakeholder platform for organizations in regulated environments.</p>
+                </div>
+
+                <!-- Vertical Solutions -->
+                <div class="product-card">
+                    <div class="product-icon">⚡</div>
+                    <h3>Vertical Solutions</h3>
+                    <h4>Care360 + Emerging Vertical AI Products</h4>
+                    <p>Sector-specific AI implementations and custom solutions for healthcare, financial services, government, education, and retail.</p>
+                    <ul class="product-list">
+                        <li>• Care360: Healthcare AI solutions</li>
+                        <li>• Financial Services solutions</li>
+                        <li>• Government & Public Sector solutions</li>
+                        <li>• Education solutions</li>
+                        <li>• Retail & Consumer Goods solutions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section id="industries" class="industries">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industries We Serve</h2>
+                <p>Deep expertise in regulated and high-trust sectors where responsible AI matters most</p>
+            </div>
+            
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">🏛️</div>
+                    <h3>Government</h3>
+                    <p>Digital public infrastructure, responsible AI for citizen-facing services, and implementation frameworks for public sector AI deployment.</p>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">🎓</div>
+                    <h3>Education</h3>
+                    <p>AI readiness for educational institutions, responsible learning analytics, and trustworthy EdTech deployment.</p>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">🏦</div>
+                    <h3>Financial Services</h3>
+                    <p>Responsible AI implementation, model risk management support, and trustworthy AI deployment in financial systems.</p>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">⚕️</div>
+                    <h3>Healthcare</h3>
+                    <p>Responsible clinical AI implementation, patient safety frameworks, and trustworthy deployment of healthcare AI systems.</p>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">🛍️</div>
+                    <h3>Retail & Consumer Goods</h3>
+                    <p>Responsible consumer-facing AI, ethical personalization, and trustworthy supply chain AI systems.</p>
+                </div>
+            </div>
+            
+            <!-- Callout Boxes -->
+            <div class="callout-boxes">
+                <div class="callout-box callout-box-1">
+                    <span class="callout-icon">🤝</span>
+                    <p><strong>Interested in becoming a design partner?</strong> Contact us at <a href="mailto:np@dendrons.ai">np@dendrons.ai</a> to co-create responsible AI solutions as an early adopter.</p>
+                </div>
+                
+                <div class="callout-box callout-box-2">
+                    <span class="callout-icon">💡</span>
+                    <p><strong>Looking for AI training programs?</strong> Visit <a href="https://skillai.academy" target="_blank">SkillAI Academy</a> for hands-on learning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Dendrons AI</h2>
+            </div>
+            
+            <div class="about-content">
+                <p>Dendrons AI builds responsible AI products for organizations operating in high-trust, regulated environments. Our products are informed by real-world experience across government, financial services, healthcare, education, and retail sectors.</p>
+                
+                <h3>Our Founder</h3>
+                
+                <p>Dendrons AI was founded by <a href="https://about.me/niveditapandey" target="_blank">Ms. Nivedita Pandey</a>, an Ivy League-trained digital innovation leader with 16 years of experience building digital products, platforms, and businesses across US, UK, and Asian markets. Her entire career has focused on launching new-to-market, category-creating products and businesses.</p>
+                
+                <p>As a Prime Minister's Fellow, she led one of India's first DBT pilots and scaled the implementation to rank first nationwide, earning recognition from senior government leaders. Her career includes launching new physical and digital products at Estée Lauder in New York, working with MNCs and startups in London, launching and scaling India's first digital gold product, and building and scaling an Asia-wide multimillion-dollar Private Capital business vertical at Microsoft in Singapore, where she won awards for her work.</p>
+                
+                <p>Her innovative ideas have been recognized globally - winning first prize at BT London and ranking in the top 10 at UN Women New York. She brings deep strategy and growth expertise across financial services, consumer, enterprise technology, and government sectors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta">
+        <div class="container">
+            <h2>Ready to Deploy AI Responsibly?</h2>
+            <p>Let's discuss how we can support your responsible AI journey</p>
+            <a href="mailto:contact@dendrons.ai" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Dendrons AI</h3>
+                    <p>Responsible AI products for high-trust environments. Supported by Google Cloud for Startups.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#products">Governance Suite</a></li>
+                        <li><a href="#products">Engagement Suite</a></li>
+                        <li><a href="#products">Vertical Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:contact@dendrons.ai">Email: contact@dendrons.ai</a></li>
+                        <li><a href="https://skillai.academy" target="_blank">SkillAI Academy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dendrons AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
