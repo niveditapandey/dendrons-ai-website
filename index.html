@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dendrons.ai | Agentic AI Products for the AI Lifecycle</title>
-    <meta name="description" content="Five agentic AI suites for the full AI lifecycle: market intelligence, conversion, AI governance, AI operations, and commerce. Singapore, South East Asia.">
+    <title>Dendrons.ai | Trust Infrastructure for AI that Acts</title>
+    <meta name="description" content="Trust infrastructure for AI that acts: AI governance, spend auditing, and agent-commerce security. Also: getHeard for stakeholder intelligence and getBookings for demand conversion. Singapore.">
     <meta name="google-site-verification" content="jUlW6XLLMHfY01XNBJ1n_NRVLCszxZfgVOAeO4F7eOI">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -16,8 +16,8 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dendrons.ai/">
-    <meta property="og:title" content="Dendrons.ai | Agentic AI Products for the AI Lifecycle">
-    <meta property="og:description" content="Five agentic AI suites for the full AI lifecycle. Intelligence, conversion, governance, operations, and commerce. Singapore.">
+    <meta property="og:title" content="Dendrons.ai | Trust Infrastructure for AI that Acts">
+    <meta property="og:description" content="Trust infrastructure for AI that acts: governance before adoption, spend auditing in operation, agent-commerce security. Plus getHeard and getBookings. Singapore.">
     <meta property="og:locale" content="en_SG">
     <meta property="og:site_name" content="Dendrons.ai">
     <meta property="og:image" content="https://dendrons.ai/og-image.png">
@@ -29,8 +29,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@curious_NP">
     <meta name="twitter:creator" content="@curious_NP">
-    <meta name="twitter:title" content="Dendrons.ai | Agentic AI Products for the AI Lifecycle">
-    <meta name="twitter:description" content="Five suites. One platform. From market intelligence to AI-native commerce. Listen, convert, govern, optimise, win.">
+    <meta name="twitter:title" content="Dendrons.ai | Trust Infrastructure for AI that Acts">
+    <meta name="twitter:description" content="Compass governs AI before adoption. Steward audits what models do. The Commerce Suite secures agent transactions. Plus getHeard and getBookings.">
     <meta name="twitter:image" content="https://dendrons.ai/og-image.png">
 
     <!-- JSON-LD Structured Data -->
@@ -248,7 +248,7 @@
           "name": "What is Dendrons.ai?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Dendrons.ai is an agentic AI company building five product suites across the AI lifecycle: getHeard for market intelligence, getBookings and Newton for lead conversion, the Compass Suite for AI governance, Steward for AI operations, and an Agentic Commerce Suite for the agent economy. Supported by Google Cloud for Startups and an Anthropic Claude Partner Network Member."
+            "text": "Dendrons.ai is an agentic AI company building five product suites across the AI lifecycle: getHeard for market intelligence, getBookings and Newton for lead conversion, the Compass Suite for AI governance, Steward for AI operations, and an Agentic Commerce Suite for the agent economy. Supported by Google Cloud for Startups Ecosystem and an Anthropic Claude Partner Network Member."
           }
         },
         {
@@ -337,7 +337,7 @@
         .hero {
             background: linear-gradient(135deg, #2563eb 0%, #06b6d4 50%, #10b981 100%);
             color: white;
-            padding: 120px 0 100px;
+            padding: 44px 0 36px;
             position: relative;
             overflow: hidden;
         }
@@ -428,6 +428,18 @@
             align-items: start;
         }
 
+        .engine-inner-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: start;
+        }
+
+        .engine-inner-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: start;
+        }
+
         .engine-step {
             text-align: center;
             padding: 4px 18px;
@@ -468,23 +480,44 @@
 
         .engine-step .step-tag {
             display: inline-block;
-            font-size: 9px;
+            font-size: 8px;
             font-weight: 700;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
-            padding: 2px 8px;
+            padding: 2px 7px;
             border-radius: 20px;
             background: rgba(255,255,255,0.2);
             color: rgba(255,255,255,0.9);
-            margin-left: 7px;
+            margin-left: 6px;
             vertical-align: middle;
             white-space: nowrap;
+        }
+        .engine-strip-tagline {
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 13px;
+            letter-spacing: 0.12em;
+            margin-top: 20px;
+        }
+        .step-flags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 4px;
+            margin-top: 8px;
+        }
+        .hero-govern-bar {
+            margin-top: 22px;
+            font-size: 18px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.9);
+            letter-spacing: 0.08em;
         }
 
         .engine-step .step-tag-live {
             background: #dcfce7;
             color: #166534;
-            white-space: normal;
+            white-space: nowrap;
         }
 
         /* Sections */
@@ -539,6 +572,23 @@
             gap: 24px;
             margin-top: 10px;
         }
+        .suites-group-header { margin: 48px 0 20px; }
+        .suites-group-header:first-child { margin-top: 0; }
+        .suites-group-header h2 { font-size: 30px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px; }
+        .suites-group-header p { font-size: 15px; color: #718096; }
+        .suites-secondary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .suite-card-lite {
+            padding: 24px;
+            box-shadow: none;
+            background: #f8fafc;
+        }
+        .suite-card-lite h3 { font-size: 17px; }
+        .suite-card-lite p { font-size: 13px; }
 
         .suite-card {
             background: white;
@@ -588,7 +638,7 @@
         .suite-card-stew .sc-tagline  { color: #dc2626; }
         .suite-card-comm .sc-tagline  { color: #f59e0b; }
         .suite-card p { color: #718096; font-size: 14px; line-height: 1.65; flex-grow: 1; }
-        .suite-products { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 18px; }
+        .suite-products { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 18px; min-height: 68px; align-content: flex-start; }
         .suite-product-pill {
             background: #f1f5f9;
             border: 1px solid #e2e8f0;
@@ -604,7 +654,9 @@
             background: #e2e8f0;
             color: #1e3a8a;
         }
-        .cs-label { display: inline-block; background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; margin-left: 8px; }
+        .cs-label { display: inline-block; background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; margin-left: 8px; white-space: nowrap; }
+        .card-availability { display: flex; flex-wrap: nowrap; gap: 6px; margin-top: 16px; }
+        .suite-card > p { flex-grow: 1; }
         .cs-label.cs-live { background: #dcfce7; color: #166534; }
         .suite-cta {
             display: inline-block;
@@ -930,7 +982,9 @@
             .footer-content { grid-template-columns: 1fr; gap: 40px; }
             .callout-boxes { grid-template-columns: 1fr; }
             .suites-grid { grid-template-columns: 1fr; }
+            .suites-secondary-grid { grid-template-columns: 1fr; }
             .industries-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .engine-strip { display: none; }
         }
 
         @media (max-width: 560px) {
@@ -966,11 +1020,11 @@
         <img src="/dendrons-mark-white.png" alt="" aria-hidden="true" style="position:absolute;right:-30px;top:50%;transform:translateY(-50%);height:580px;width:580px;object-fit:contain;opacity:0.15;pointer-events:none;z-index:0;">
         <div class="container">
             <div class="hero-content">
-                <div class="badge">Supported by Google Cloud for Startups &nbsp;·&nbsp; Anthropic Claude Partner Network Member</div>
-                <h1>Agentic AI products<br>for the entire AI lifecycle</h1>
-                <p class="tagline">Five suites. One platform. From market intelligence to AI-native commerce.</p>
-                <p class="hero-descriptor">Dendrons.ai builds agentic products that help organisations understand their stakeholders, convert demand, govern risk, optimise AI operations, and prepare for a future where AI agents discover, evaluate, and transact on behalf of humans.</p>
-                <p class="hero-endline">Listen · Convert · Govern · Optimise · Win</p>
+                <div class="badge">Supported by Google Cloud for Startups Ecosystem &nbsp;·&nbsp; Anthropic Claude Partner Network Member</div>
+                <h1>Trust Infrastructure<br>for AI that Acts</h1>
+                <p class="tagline">We build for a world where AI systems increasingly act and transact - not merely advise - inside organisations and commerce.</p>
+                <p class="hero-descriptor">Compass Suite governs AI before adoption.<br>Steward Suite meters and audits what models actually do.<br>Commerce Suite handles trust when agents transact.</p>
+                <p class="hero-govern-bar">Govern &nbsp;·&nbsp; Optimise &nbsp;·&nbsp; Trust</p>
             </div>
         </div>
     </section>
@@ -978,31 +1032,24 @@
     <!-- Five suites strip -->
     <div class="engine-strip">
         <div class="container">
-            <div class="engine-inner">
-                <div class="engine-step">
-                    <div class="step-label">Intelligence</div>
-                    <div class="step-name">getHeard</div>
-                    <div class="step-product">Pulse · Voice</div>
-                </div>
-                <div class="engine-step">
-                    <div class="step-label">Conversion</div>
-                    <div class="step-name">getBookings · Newton</div>
-                    <div class="step-product">Outbound · Inbound</div>
-                </div>
+            <div class="engine-inner-3">
                 <div class="engine-step">
                     <div class="step-label">Governance</div>
-                    <div class="step-name">Compass</div>
-                    <div class="step-product">AIReady · DataReady<br>GovernReady · StayReady</div>
+                    <div class="step-name">Compass Suite</div>
+                    <div class="step-product">AIReady · DataReady · GovernReady · StayReady</div>
+                    <div class="step-flags"><span class="step-tag step-tag-live">Free scan available</span></div>
                 </div>
                 <div class="engine-step">
                     <div class="step-label">AI Operations</div>
-                    <div class="step-name">Steward <span class="step-tag step-tag-live">Pare live on Chrome Web Store · Rein via private access</span></div>
+                    <div class="step-name">Steward Suite</div>
                     <div class="step-product">Rein · Pare</div>
+                    <div class="step-flags"><span class="step-tag step-tag-live">Pare · Chrome Web Store</span><span class="step-tag step-tag-live">Rein · Private Access</span></div>
                 </div>
                 <div class="engine-step">
                     <div class="step-label">Agentic Commerce</div>
-                    <div class="step-name">Commerce Suite <span class="step-tag step-tag-live">Free scan available</span></div>
-                    <div class="step-product">RankReady · TransactReady<br>TrustReady</div>
+                    <div class="step-name">Commerce Suite</div>
+                    <div class="step-product">RankReady · TransactReady · TrustReady</div>
+                    <div class="step-flags"><span class="step-tag step-tag-live">Free scan available</span></div>
                 </div>
             </div>
         </div>
@@ -1011,38 +1058,13 @@
     <!-- Products Section -->
     <section id="products">
         <div class="container">
-            <div class="section-header">
-                <h2>Five suites. One company.</h2>
-                <p>Each suite has its own buyer, its own problem, its own motion. Together: the full arc from signal to action to compliance.</p>
+
+            <!-- Group 1: The AI Trust Stack -->
+            <div class="suites-group-header" style="margin-top:0;">
+                <h2>The AI Trust Stack</h2>
+                <p>Govern it before adoption. Audit it in operation. Secure it when it transacts.</p>
             </div>
-
             <div class="suites-grid">
-
-                <!-- Intelligence -->
-                <div onclick="location.href='https://intelligence.dendrons.ai'" class="suite-card suite-card-intel">
-                    <div class="sc-badge-wrap"><span class="suite-badge suite-badge-intelligence">Intelligence suite</span></div>
-                    <h3>getHeard</h3>
-                    <div class="sc-tagline">Know what's being said. Know what people actually think.</div>
-                    <p>Media intelligence and stakeholder research for government, public affairs, and research teams - from raw signal to prioritised action.</p>
-                    <div class="suite-products">
-                        <a href="https://pulse.dendrons.ai" class="suite-product-pill" onclick="event.stopPropagation()">Pulse</a>
-                        <a href="https://getheardvoice.dendrons.ai" class="suite-product-pill" onclick="event.stopPropagation()">Voice</a>
-                    </div>
-                    <a href="https://intelligence.dendrons.ai" class="suite-cta" onclick="event.stopPropagation()">Explore suite →</a>
-                </div>
-
-                <!-- Conversion -->
-                <div onclick="location.href='https://conversion.dendrons.ai'" class="suite-card suite-card-conv">
-                    <div class="sc-badge-wrap"><span class="suite-badge suite-badge-conversion">Conversion suite</span></div>
-                    <h3>getBookings + Newton</h3>
-                    <div class="sc-tagline">Turn high-intent searches into confirmed visits.</div>
-                    <p>Two AI agents that close the gap between online interest and in-person commitment. getBookings hunts outbound. Newton catches every inbound call.</p>
-                    <div class="suite-products">
-                        <a href="https://getbookings.dendrons.ai" class="suite-product-pill" onclick="event.stopPropagation()">getBookings</a>
-                        <a href="https://newton.dendrons.ai" class="suite-product-pill" onclick="event.stopPropagation()">Newton</a>
-                    </div>
-                    <a href="https://conversion.dendrons.ai" class="suite-cta" onclick="event.stopPropagation()">Explore suite →</a>
-                </div>
 
                 <!-- Governance -->
                 <div onclick="location.href='https://compass.dendrons.ai'" class="suite-card suite-card-gov">
@@ -1056,29 +1078,33 @@
                         <a href="https://compass.dendrons.ai/governready" class="suite-product-pill" onclick="event.stopPropagation()">GovernReady</a>
                         <a href="https://compass.dendrons.ai/stayready" class="suite-product-pill" onclick="event.stopPropagation()">StayReady</a>
                     </div>
-                    <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-top:auto;">
+                    <div style="display:flex; flex-direction:column; gap:8px; min-height:52px;">
                         <a href="https://compass.dendrons.ai" class="suite-cta" onclick="event.stopPropagation()">Explore suite →</a>
                         <a href="https://compass.dendrons.ai/report/demo" class="suite-cta" style="font-weight:500; opacity:0.7;" onclick="event.stopPropagation()">View sample GovernReady report →</a>
                     </div>
+                    <div class="card-availability"><span class="cs-label cs-live" style="margin-left:0;">Free scan available</span></div>
                 </div>
 
                 <!-- Steward -->
                 <div onclick="location.href='https://steward.dendrons.ai'" class="suite-card suite-card-stew">
                     <div class="sc-badge-wrap"><span class="suite-badge suite-badge-aiops">AI Operations</span></div>
-                    <h3>Steward <span class="cs-label cs-live">Pare live on Chrome Web Store · Rein via private access</span></h3>
+                    <h3>Steward Suite</h3>
                     <div class="sc-tagline">Every token. Every dollar. Accounted for.</div>
                     <p>Know what your AI is spending. Control it before the bill does. Rein governs AI spend at the enterprise layer. Pare shows individual developers what their AI usage actually costs, privately and locally.</p>
                     <div class="suite-products">
                         <a href="https://steward.dendrons.ai#rein" class="suite-product-pill" onclick="event.stopPropagation()">Rein</a>
                         <a href="https://steward.dendrons.ai#pare" class="suite-product-pill" onclick="event.stopPropagation()">Pare</a>
                     </div>
-                    <a href="https://steward.dendrons.ai" class="suite-cta" onclick="event.stopPropagation()">Request private access →</a>
+                    <div style="display:flex; flex-direction:column; gap:8px; min-height:52px;">
+                        <a href="https://steward.dendrons.ai" class="suite-cta" onclick="event.stopPropagation()">Request private access →</a>
+                    </div>
+                    <div class="card-availability"><span class="cs-label cs-live" style="margin-left:0;">Pare · Chrome Web Store</span><span class="cs-label cs-live" style="margin-left:0;">Rein · Private Access</span></div>
                 </div>
 
                 <!-- Agentic Commerce -->
                 <div onclick="location.href='https://agenticcommerce.dendrons.ai'" class="suite-card suite-card-comm">
                     <div class="sc-badge-wrap"><span class="suite-badge suite-badge-commerce">Agentic Commerce</span></div>
-                    <h3>Commerce Suite <span class="cs-label cs-live">Free scan available</span></h3>
+                    <h3>Commerce Suite</h3>
                     <div class="sc-tagline">Be found, transactable, and trusted by AI agents.</div>
                     <p>Three products for businesses that need to show up in AI recommendations, accept agentic purchases, and pass agent-security audits - across ChatGPT, Gemini, Perplexity, and Google AI Overviews.</p>
                     <div class="suite-products">
@@ -1086,15 +1112,69 @@
                         <a href="https://agenticcommerce.dendrons.ai#transactready" class="suite-product-pill" onclick="event.stopPropagation()">TransactReady</a>
                         <a href="https://agenticcommerce.dendrons.ai#trustready" class="suite-product-pill" onclick="event.stopPropagation()">TrustReady</a>
                     </div>
-                    <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-top:auto;">
+                    <div style="display:flex; flex-direction:column; gap:8px; min-height:52px;">
                         <a href="https://agenticcommerce.dendrons.ai/scan" class="suite-cta" onclick="event.stopPropagation()">Scan your brand free →</a>
                         <a href="https://agenticcommerce.dendrons.ai/dashboard?demo=1" class="suite-cta" style="font-weight:500; opacity:0.7;" onclick="event.stopPropagation()">View live demo →</a>
                     </div>
+                    <div class="card-availability"><span class="cs-label cs-live" style="margin-left:0;">Free scan available</span></div>
+                </div>
+
+            </div>
+
+            <!-- Group 2: Also from Dendrons.ai -->
+            <div class="suites-group-header">
+                <h2>Also from Dendrons.ai</h2>
+                <p>Applied AI products built from the same institutional work.</p>
+            </div>
+            <div class="suites-secondary-grid">
+
+                <!-- Intelligence -->
+                <div onclick="location.href='https://intelligence.dendrons.ai'" class="suite-card suite-card-intel suite-card-lite">
+                    <div class="sc-badge-wrap"><span class="suite-badge suite-badge-intelligence">Intelligence suite</span></div>
+                    <h3>getHeard</h3>
+                    <div class="sc-tagline">Know what's being said. Know what people actually think.</div>
+                    <p>Media intelligence and stakeholder research for government, public affairs, and research teams - from raw signal to prioritised action.</p>
+                    <div class="suite-products">
+                        <a href="https://pulse.dendrons.ai" class="suite-product-pill" onclick="event.stopPropagation()">Pulse</a>
+                        <a href="https://getheardvoice.dendrons.ai" class="suite-product-pill" onclick="event.stopPropagation()">Voice</a>
+                    </div>
+                    <a href="https://intelligence.dendrons.ai" class="suite-cta" onclick="event.stopPropagation()">Explore suite →</a>
+                </div>
+
+                <!-- Conversion -->
+                <div onclick="location.href='https://conversion.dendrons.ai'" class="suite-card suite-card-conv suite-card-lite">
+                    <div class="sc-badge-wrap"><span class="suite-badge suite-badge-conversion">Conversion suite</span></div>
+                    <h3>getBookings + Newton</h3>
+                    <div class="sc-tagline">Turn high-intent searches into confirmed visits.</div>
+                    <p>Two AI agents that close the gap between online interest and in-person commitment. getBookings hunts outbound. Newton catches every inbound call.</p>
+                    <div class="suite-products">
+                        <a href="https://getbookings.dendrons.ai" class="suite-product-pill" onclick="event.stopPropagation()">getBookings</a>
+                        <a href="https://newton.dendrons.ai" class="suite-product-pill" onclick="event.stopPropagation()">Newton</a>
+                    </div>
+                    <a href="https://conversion.dendrons.ai" class="suite-cta" onclick="event.stopPropagation()">Explore suite →</a>
                 </div>
 
             </div>
         </div>
     </section>
+
+    <!-- Also from ribbon -->
+    <div class="engine-strip">
+        <div class="container">
+            <div class="engine-inner-2">
+                <div class="engine-step">
+                    <div class="step-label">Intelligence</div>
+                    <div class="step-name">getHeard</div>
+                    <div class="step-product">Pulse · Voice</div>
+                </div>
+                <div class="engine-step">
+                    <div class="step-label">Conversion</div>
+                    <div class="step-name">getBookings · Newton</div>
+                    <div class="step-product">Outbound · Inbound</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Industries Section -->
     <section id="industries" class="industries">
@@ -1211,13 +1291,13 @@
             </div>
 
             <div class="about-content">
-                <p>Dendrons.ai builds agentic AI products across the entire AI lifecycle - helping organisations understand their market, convert demand, govern their AI, control its cost, and get ready for agentic commerce. Five suites, built on real-world experience across government, financial services, healthcare, education, and consumer sectors.</p>
+                <p>Dendrons.ai builds trust infrastructure for AI that acts. As AI systems move from advisory to agentic - making decisions, taking actions, and transacting on behalf of organisations - the governance, audit, and security layers that sit around them become critical. That is what we build: Compass for governance before adoption, Steward for spend auditing in operation, and the Commerce Suite for trust when agents transact.</p>
 
-                <p>Supported by Google Cloud for Startups and an Anthropic Claude Partner Network Member.</p>
+                <p>Supported by Google Cloud for Startups Ecosystem and an Anthropic Claude Partner Network Member.</p>
 
                 <h3>Our Founder</h3>
 
-                <p>Dendrons.ai was founded by <a href="https://about.me/niveditapandey" target="_blank">Nivedita Pandey</a>, an AI and Digital Innovation Leader with a Wharton MBA (Joseph Wharton Scholar) and a distinction in Computer Science Engineering, with 16 years of experience building digital products, platforms, and businesses across US, UK, and Asian markets.</p>
+                <p>Dendrons.ai was founded by <a href="https://about.me/niveditapandey" target="_blank">Nivedita Pandey</a>, an AI and Digital Innovation Leader with a Wharton MBA (Joseph Wharton Fellow) and a distinction in Computer Science Engineering, with 16 years of experience building digital products, platforms, and businesses across US, UK, and Asian markets.</p>
 
                 <p>Nivedita's global career spans launching new physical and digital products at Estée Lauder in New York, working with MNCs and startups in London, launching India's first digital gold product, and building and scaling an Asia-wide multimillion-dollar Private Capital business vertical at Microsoft in Singapore.</p>
 
@@ -1226,6 +1306,8 @@
                 <p>Her work has been recognised globally - at UN Women New York (top 10 of ~450 global pitches for innovative tech solution), at British Telecom London (1st prize for most innovative pitch), by the State Chief Secretary in India (for her leadership and execution excellence in DBT as Prime Minister's Fellow), at Microsoft Singapore (APAC Accelerator Award), and by the Singapore government as a high-calibre innovator and entrepreneur.</p>
 
                 <p>Startups founded by her in the past have been incubated at Penn Incubator (backed by National Science Foundation, USA) and Antler Singapore (top 3% of global applicants).</p>
+
+                <p>Nivedita designed and delivered an Applied AI Innovation Lab for a state Administrative Training Institute, and AI envisioning sessions for public sector enterprises, working with 500+ civil servants and senior PSU executives to discover where AI actually fits inside public institutions and what blocks adoption. What she learned there - that public institutions do not adopt AI until they can trust and audit it - shaped the thesis of Dendrons.ai. The same lens produced <a href="https://nitiscope.com" target="_blank">NitiScope</a>, a public procurement intelligence platform indexing 3.95 million Indian tenders and 3.17 million contract awards.</p>
             </div>
         </div>
     </section>
@@ -1233,8 +1315,8 @@
     <!-- CTA Section -->
     <section id="contact" class="cta">
         <div class="container">
-            <h2>Wherever you are in the AI lifecycle, we have an agentic solution for it.</h2>
-            <p>Understand your market, convert demand, govern your AI, control its cost, or get ready for agentic commerce. Tell us where you are and we will guide you to the right suite.</p>
+            <h2>Wherever you are in your AI journey, we have an agentic solution for your needs.</h2>
+            <p>Understand stakeholders, convert demand, govern your AI, control its cost, or get ready for agentic commerce. Tell us what you are trying to solve for and we will guide you to the right suite.</p>
             <a href="mailto:np@dendrons.ai" class="cta-button">Get in Touch</a>
         </div>
     </section>
@@ -1245,8 +1327,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3 style="display:flex;align-items:center;gap:10px;"><img src="/dendrons-mark.png" style="height:28px;width:28px;object-fit:contain;" alt="">Dendrons.ai</h3>
-                    <p class="footer-tagline">Listen · Convert · Govern · Optimise · Win</p>
-                    <p class="footer-creds">Supported by Google Cloud for Startups.<br>Anthropic Claude Partner Network Member.</p>
+                    <p class="footer-creds">Supported by Google Cloud for Startups Ecosystem.<br>Anthropic Claude Partner Network Member.<br>Listen · Convert · Govern · Optimise · Trust</p>
                 </div>
 
                 <div class="footer-links">
