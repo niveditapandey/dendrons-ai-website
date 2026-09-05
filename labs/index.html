@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dendrons Labs | Applied AI Products from Dendrons.ai</title>
+    <meta name="description" content="Dendrons Labs - real products built and validated through customer discovery and real-world usage. getHeard, getBookings, and NitiScope from Dendrons.ai.">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Nivedita Pandey">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        header {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        nav { display: flex; justify-content: space-between; align-items: center; }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 50%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        nav ul { display: flex; gap: 30px; list-style: none; }
+
+        nav a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: #06b6d4; }
+        nav a.active { color: #0891b2; }
+
+        .neuron-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Page intro */
+        .labs-intro {
+            background: linear-gradient(180deg, #f0f4ff 0%, #e8f0fe 100%);
+            padding: 60px 0 50px;
+            border-bottom: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .labs-intro .container { position: relative; z-index: 1; }
+
+        .labs-intro h1 {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            color: #1e3a8a;
+            margin-bottom: 14px;
+            line-height: 1.2;
+        }
+
+        .labs-intro .disclaimer {
+            font-size: 15px;
+            color: #64748b;
+            max-width: 680px;
+            line-height: 1.65;
+            padding-left: 16px;
+            border-left: 3px solid #c7d2fe;
+        }
+
+        /* Products section */
+        .labs-section {
+            padding: 60px 0 80px;
+            background: linear-gradient(180deg, #f8fafc 0%, #f0f9ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .labs-section .container { position: relative; z-index: 1; }
+
+        /* Suite Cards */
+        .suite-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .suite-badge-intelligence { background: linear-gradient(90deg, #2563eb, #06b6d4); color: #fff; }
+        .suite-badge-conversion   { background: linear-gradient(90deg, #059669, #10b981); color: #fff; }
+        .suite-badge-procurement  { background: linear-gradient(90deg, #1e40af, #2563eb); color: #fff; }
+        .suite-badge-commerce     { background: linear-gradient(90deg, #f59e0b, #fbbf24); color: #fff; }
+
+        .suites-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 0;
+        }
+
+        .suite-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            border: 2px solid #e2e8f0;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            cursor: pointer;
+        }
+
+        .suite-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+        }
+
+        .suite-card-intel::before   { background: linear-gradient(90deg, #2563eb, #06b6d4); }
+        .suite-card-conv::before    { background: linear-gradient(90deg, #059669, #10b981); }
+        .suite-card-procure::before { background: linear-gradient(90deg, #1e40af, #2563eb); }
+        .suite-card-commerce::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+
+        .suite-card:hover { transform: translateY(-6px); }
+        .suite-card-intel:hover    { border-color: #2563eb; box-shadow: 0 16px 32px rgba(37,99,235,0.15); }
+        .suite-card-conv:hover     { border-color: #10b981; box-shadow: 0 16px 32px rgba(16,185,129,0.15); }
+        .suite-card-procure:hover  { border-color: #1e40af; box-shadow: 0 16px 32px rgba(30,64,175,0.15); }
+        .suite-card-commerce:hover { border-color: #f59e0b; box-shadow: 0 16px 32px rgba(245,158,11,0.15); }
+
+        .suite-card .sc-badge-wrap { margin-bottom: 18px; }
+        .suite-card h3 { font-size: 20px; font-weight: 700; color: #1e3a8a; margin-bottom: 6px; }
+
+        .suite-card .sc-tagline {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 14px;
+        }
+
+        .suite-card-intel .sc-tagline    { color: #2563eb; }
+        .suite-card-conv .sc-tagline     { color: #059669; }
+        .suite-card-procure .sc-tagline  { color: #1e40af; }
+        .suite-card-commerce .sc-tagline { color: #d97706; }
+
+        .suite-card p { color: #718096; font-size: 14px; line-height: 1.65; flex-grow: 1; }
+
+        .suite-products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 14px 0 18px;
+            min-height: 40px;
+            align-content: flex-start;
+        }
+
+        .suite-product-pill {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #475569;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        a.suite-product-pill:hover { background: #e2e8f0; color: #1e3a8a; }
+
+        .suite-cta {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: auto;
+            transition: opacity 0.2s;
+        }
+
+        .suite-card-intel .suite-cta    { color: #2563eb; }
+        .suite-card-conv .suite-cta     { color: #059669; }
+        .suite-card-procure .suite-cta  { color: #1e40af; }
+        .suite-card-commerce .suite-cta { color: #d97706; }
+        .suite-cta:hover { opacity: 0.75; }
+
+        /* Industries */
+        .labs-industries {
+            padding: 60px 0 80px;
+            background: linear-gradient(180deg, #cffafe 0%, #a7f3d0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .labs-industries .container { position: relative; z-index: 1; }
+
+        .labs-section-header { text-align: center; margin-bottom: 48px; }
+        .labs-section-header h2 { font-size: 36px; font-weight: 700; color: #1e3a8a; margin-bottom: 10px; }
+        .labs-section-header p { font-size: 16px; color: #64748b; }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .industry-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px 20px 22px;
+            border: 0.5px solid rgba(0,0,0,0.08);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .industry-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.1); }
+
+        .industry-icon-wrap {
+            width: 32px; height: 32px; border-radius: 7px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 6px; flex-shrink: 0;
+        }
+
+        .ic-navy   { background: #B5D4F4; }
+        .ic-purple { background: #EEEDFE; }
+        .ic-teal   { background: #9FE1CB; }
+        .ic-green  { background: #C0DD97; }
+
+        .industry-card h3 { font-size: 14px; font-weight: 600; color: #1e3a8a; line-height: 1.3; margin: 0; }
+        .industry-card p  { color: #718096; font-size: 12px; line-height: 1.5; margin: 0; }
+
+        .industry-pill {
+            display: inline-block; font-size: 11px; padding: 2px 8px;
+            border-radius: 20px; margin-top: 6px; font-weight: 500;
+        }
+
+        .pill-navy   { background: #B5D4F4; color: #042C53; }
+        .pill-purple { background: #EEEDFE; color: #3C3489; }
+        .pill-teal   { background: #9FE1CB; color: #04342C; }
+        .pill-green  { background: #C0DD97; color: #173404; }
+
+        .callout-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .callout-box {
+            border-radius: 12px; padding: 35px;
+            color: white; position: relative;
+        }
+
+        .callout-box-1 { background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%); box-shadow: 0 4px 15px rgba(37,99,235,0.3); }
+        .callout-box-2 { background: linear-gradient(135deg, #06b6d4 0%, #10b981 100%); box-shadow: 0 4px 15px rgba(6,182,212,0.3); }
+
+        .callout-icon { font-size: 32px; margin-bottom: 12px; display: block; }
+        .callout-box p { font-size: 16px; line-height: 1.6; margin: 0; }
+        .callout-box strong { font-weight: 700; display: block; margin-bottom: 8px; font-size: 18px; }
+        .callout-box a { color: rgba(255,255,255,0.9); }
+
+        @media (max-width: 960px) { .industries-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+        @media (max-width: 480px) { .industries-grid { grid-template-columns: 1fr; } }
+
+        /* NitiScope stats */
+        .labs-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 12px 0;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            margin: 10px 0 14px;
+        }
+
+        .labs-stat-n { font-size: 20px; font-weight: 700; color: #1e40af; line-height: 1; }
+        .labs-stat-l { font-size: 12px; color: #718096; line-height: 1.35; margin-top: 4px; }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            color: white;
+            padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer .container { position: relative; z-index: 1; }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .footer-creds { color: #93a4bd; font-size: 13px; line-height: 1.75; }
+
+        .footer-links h4 { font-size: 16px; margin-bottom: 20px; font-weight: 600; }
+        .footer-links ul { list-style: none; }
+
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            display: block;
+            padding: 8px 0;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover { color: #22d3ee; }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: #e0e7ff;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .suites-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; gap: 40px; }
+            .labs-stats { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <a class="logo" href="/" style="display:flex;align-items:center;gap:10px;"><img src="/dendrons-mark.png" style="height:30px;width:30px;object-fit:contain;" alt="Dendrons.ai mark">Dendrons.ai</a>
+            <ul>
+                <li><a href="/#products">Products</a></li>
+                <li><a href="/labs" class="active">Labs</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="labs-intro">
+        <canvas class="neuron-canvas" data-neuron-field data-theme="light" data-density="14" aria-hidden="true"></canvas>
+        <div class="container">
+            <h1>Dendrons Labs</h1>
+            <p class="disclaimer">Demos built after discovery with real customers and prospects. Early-stage work we are exploring ahead of the market. Not currently sold or supported.</p>
+        </div>
+    </div>
+
+    <section class="labs-section">
+        <canvas class="neuron-canvas" data-neuron-field data-theme="light" data-density="14" aria-hidden="true"></canvas>
+        <div class="container">
+            <div class="suites-grid">
+
+                <!-- getHeard -->
+                <div onclick="location.href='https://intelligence.dendrons.ai'" class="suite-card suite-card-intel">
+                    <div class="sc-badge-wrap"><span class="suite-badge suite-badge-intelligence">Intelligence suite</span></div>
+                    <h3>getHeard</h3>
+                    <div class="sc-tagline">Know what's being said. Know what people actually think.</div>
+                    <p>Media intelligence and stakeholder research for government, public affairs, and research teams - from raw signal to prioritised action.</p>
+                    <div class="suite-products">
+                        <a href="https://pulse.dendrons.ai" class="suite-product-pill" onclick="event.stopPropagation()">Pulse</a>
+                        <a href="https://getheardvoice.dendrons.ai" class="suite-product-pill" onclick="event.stopPropagation()">Voice</a>
+                    </div>
+                    <a href="https://intelligence.dendrons.ai" class="suite-cta" onclick="event.stopPropagation()">Explore suite →</a>
+                </div>
+
+                <!-- getBookings -->
+                <div onclick="location.href='https://conversion.dendrons.ai'" class="suite-card suite-card-conv">
+                    <div class="sc-badge-wrap"><span class="suite-badge suite-badge-conversion">Conversion suite</span></div>
+                    <h3>getBookings + Newton</h3>
+                    <div class="sc-tagline">Turn high-intent searches into confirmed visits.</div>
+                    <p>Two AI agents that close the gap between online interest and in-person commitment. getBookings hunts outbound. Newton catches every inbound call.</p>
+                    <div class="suite-products">
+                        <a href="https://getbookings.dendrons.ai" class="suite-product-pill" onclick="event.stopPropagation()">getBookings</a>
+                        <a href="https://newton.dendrons.ai" class="suite-product-pill" onclick="event.stopPropagation()">Newton</a>
+                    </div>
+                    <a href="https://conversion.dendrons.ai" class="suite-cta" onclick="event.stopPropagation()">Explore suite →</a>
+                </div>
+
+                <!-- Agentic Commerce Suite -->
+                <div onclick="location.href='https://agenticcommerce.dendrons.ai'" class="suite-card suite-card-commerce">
+                    <div class="sc-badge-wrap"><span class="suite-badge suite-badge-commerce">Agentic Commerce</span></div>
+                    <h3>Agentic Commerce Suite</h3>
+                    <div class="sc-tagline">Get found, get bought, get trusted by AI agents.</div>
+                    <p>Three products for brands and retailers navigating the shift to AI-intermediated commerce - where agents discover, evaluate, and transact on behalf of customers.</p>
+                    <div class="suite-products" style="flex-direction:column; gap:10px; margin-top:16px;">
+                        <div><strong style="font-size:13px; color:#92400e;">RankReady</strong> <span style="font-size:13px; color:#718096;">- optimises your product catalogue and content so AI shopping agents find and recommend you.</span></div>
+                        <div><strong style="font-size:13px; color:#92400e;">TransactReady</strong> <span style="font-size:13px; color:#718096;">- adds the agent-accessible APIs and structured schemas an AI needs to complete a purchase on a customer's behalf.</span></div>
+                        <div><strong style="font-size:13px; color:#92400e;">TrustReady</strong> <span style="font-size:13px; color:#718096;">- builds the trust signals - verified identity, policy, audit trail - that enterprise buyers require before allowing agents to transact.</span></div>
+                    </div>
+                    <a href="https://agenticcommerce.dendrons.ai" class="suite-cta" style="margin-top:18px;" onclick="event.stopPropagation()">Explore suite →</a>
+                </div>
+
+                <!-- NitiScope -->
+                <div onclick="location.href='https://nitiscope.com'" class="suite-card suite-card-procure">
+                    <div class="sc-badge-wrap"><span class="suite-badge suite-badge-procurement">Procurement intelligence</span></div>
+                    <h3>NitiScope</h3>
+                    <div class="sc-tagline">What does India's public-procurement record actually reveal?</div>
+                    <p>A procurement-intelligence platform indexing 3.95 million Indian tender records and 3.17 million contract awards - built to surface patterns that aren't visible any other way.</p>
+                    <div class="labs-stats">
+                        <div><div class="labs-stat-n">1 in 8</div><div class="labs-stat-l">awards drew only a single bidder</div></div>
+                        <div><div class="labs-stat-n">3×</div><div class="labs-stat-l">less competitive - central vs. state procurement</div></div>
+                        <div><div class="labs-stat-n">34%</div><div class="labs-stat-l">of awards land on exactly 3 bids</div></div>
+                    </div>
+                    <a href="https://nitiscope.com" class="suite-cta" onclick="event.stopPropagation()">Explore at nitiscope.com →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries -->
+    <section class="labs-industries">
+        <canvas class="neuron-canvas" data-neuron-field data-theme="light" data-density="14" aria-hidden="true"></canvas>
+        <div class="container">
+            <div class="labs-section-header">
+                <h2>Where Labs products have been applied</h2>
+                <p>Eight sectors where getHeard, getBookings, and NitiScope have seen real use.</p>
+            </div>
+
+            <div class="industries-grid">
+
+                <div class="industry-card">
+                    <div class="industry-icon-wrap ic-navy">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="8" width="12" height="6" rx="1" stroke="#042C53" stroke-width="1.2"/><path d="M5 8V6a3 3 0 016 0v2" stroke="#042C53" stroke-width="1.2"/><circle cx="8" cy="4" r="1.5" fill="#042C53"/></svg>
+                    </div>
+                    <h3>Government &amp; public sector</h3>
+                    <p>Government communications, public agencies, PSUs, citizen research, procurement intelligence</p>
+                    <span class="industry-pill pill-navy">Pulse · Voice · NitiScope</span>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon-wrap ic-purple">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13V7l5-4 5 4v6" stroke="#3C3489" stroke-width="1.2" stroke-linejoin="round"/><rect x="6" y="9" width="4" height="4" rx="0.5" stroke="#3C3489" stroke-width="1.1"/></svg>
+                    </div>
+                    <h3>Political &amp; electoral</h3>
+                    <p>Voter sentiment, issue mapping, district-level feedback</p>
+                    <span class="industry-pill pill-purple">Voice</span>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon-wrap ic-teal">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="9" rx="1.2" stroke="#04342C" stroke-width="1.2"/><path d="M5 4V3a1 1 0 012 0v1M9 4V3a1 1 0 012 0v1" stroke="#04342C" stroke-width="1.1"/><path d="M2 7h12" stroke="#04342C" stroke-width="1"/></svg>
+                    </div>
+                    <h3>Financial services</h3>
+                    <p>Borrower research, agent feedback, market intelligence</p>
+                    <span class="industry-pill pill-teal">Voice · getBookings</span>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon-wrap ic-green">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2a3 3 0 100 6 3 3 0 000-6z" stroke="#173404" stroke-width="1.2"/><path d="M3 14c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="#173404" stroke-width="1.2" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>Healthcare</h3>
+                    <p>Patient research, frontline health networks, specialist bookings</p>
+                    <span class="industry-pill pill-green">Voice · getBookings</span>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon-wrap ic-navy">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.2" stroke="#042C53" stroke-width="1.2"/><path d="M2 7h12M6 7v6" stroke="#042C53" stroke-width="1"/></svg>
+                    </div>
+                    <h3>Real estate</h3>
+                    <p>High-intent searches converted to confirmed site visits</p>
+                    <span class="industry-pill pill-navy">getBookings</span>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon-wrap ic-purple">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 12l3-4 3 3 2-3 4 4" stroke="#3C3489" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/><rect x="2" y="2" width="12" height="10" rx="1.2" stroke="#3C3489" stroke-width="1.2"/></svg>
+                    </div>
+                    <h3>Education</h3>
+                    <p>Admissions intent converted to campus visits</p>
+                    <span class="industry-pill pill-purple">getBookings</span>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon-wrap ic-teal">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13h10M5 13V7l3-4 3 4v6" stroke="#04342C" stroke-width="1.2" stroke-linejoin="round"/><path d="M7 10h2" stroke="#04342C" stroke-width="1.1" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>Retail &amp; consumer goods</h3>
+                    <p>Jewellery, FMCG, in-store bookings &amp; Tier 2/3 research</p>
+                    <span class="industry-pill pill-teal">getBookings · Voice</span>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon-wrap ic-green">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="4.5" cy="10.5" r="2" stroke="#173404" stroke-width="1.2"/><circle cx="11.5" cy="10.5" r="2" stroke="#173404" stroke-width="1.2"/><path d="M2.5 10.5L5 6h6l2.5 4.5" stroke="#173404" stroke-width="1.2" stroke-linejoin="round"/><path d="M5 6l1-3h4l1 3" stroke="#173404" stroke-width="1" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Automotive</h3>
+                    <p>High-intent browsing converted to test drive bookings</p>
+                    <span class="industry-pill pill-green">getBookings</span>
+                </div>
+
+            </div>
+
+            <div class="callout-boxes">
+                <div class="callout-box callout-box-1">
+                    <span class="callout-icon">📡</span>
+                    <p><strong>Need media intelligence for a government or public affairs brief?</strong> getHeard Pulse and Voice are built for exactly this. Reach out: <a href="mailto:np@dendrons.ai">np@dendrons.ai</a></p>
+                </div>
+
+                <div class="callout-box callout-box-2">
+                    <span class="callout-icon">📅</span>
+                    <p><strong>Converting high-intent searches to bookings?</strong> getBookings hunts outbound, Newton closes every inbound call. Reach out: <a href="mailto:np@dendrons.ai">np@dendrons.ai</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <canvas class="neuron-canvas" data-neuron-field data-theme="dark" data-density="12" aria-hidden="true"></canvas>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 style="display:flex;align-items:center;gap:10px;"><img src="/dendrons-mark.png" style="height:28px;width:28px;object-fit:contain;" alt="">Dendrons.ai</h3>
+                    <p class="footer-creds">Headquartered in Singapore.<br>Supported by Google Cloud for Startups Ecosystem.<br>Anthropic Claude Partner Network Member.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="https://steward.dendrons.ai" target="_blank" rel="noopener">Rein</a></li>
+                        <li><a href="https://compass.dendrons.ai" target="_blank" rel="noopener">Compass</a></li>
+                        <li><a href="/labs">Dendrons Labs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:np@dendrons.ai">np@dendrons.ai</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dendrons AI Pte. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/neuron-field.js"></script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Dendrons.ai</title>
+    <meta name="description" content="Dendrons builds trust infrastructure for AI, helping regulated financial institutions and AI vendors know what AI they are running and prove it is governed. Founded by Nivedita Pandey.">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="canonical" href="https://dendrons.ai/about">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Nivedita Pandey">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        header {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        nav { display: flex; justify-content: space-between; align-items: center; }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 50%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        nav ul { display: flex; gap: 30px; list-style: none; }
+
+        nav a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: #06b6d4; }
+        nav a.active { color: #0891b2; }
+
+        .neuron-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Page intro */
+        .about-intro {
+            background: linear-gradient(180deg, #f0f4ff 0%, #e8f0fe 100%);
+            padding: 60px 0 50px;
+            border-bottom: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-intro .container { position: relative; z-index: 1; }
+
+        .about-intro h1 {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            color: #1e3a8a;
+            margin-bottom: 14px;
+            line-height: 1.2;
+        }
+
+        .about-intro .lead {
+            font-size: 15px;
+            color: #64748b;
+            max-width: 680px;
+            line-height: 1.65;
+            padding-left: 16px;
+            border-left: 3px solid #c7d2fe;
+        }
+
+        /* Content section */
+        .about-section {
+            padding: 60px 0 80px;
+            background: linear-gradient(180deg, #ffffff 0%, #f0fdfa 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section .container { position: relative; z-index: 1; }
+
+        .about-content {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .about-content .credit {
+            font-size: 14px;
+            color: #718096;
+            margin-bottom: 40px;
+        }
+
+        .about-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #1e3a8a;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .about-content a {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 2px solid #2563eb;
+            transition: all 0.3s;
+        }
+
+        .about-content a:hover {
+            color: #1d4ed8;
+            border-bottom-color: #1d4ed8;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            color: white;
+            padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer .container { position: relative; z-index: 1; }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .footer-creds { color: #93a4bd; font-size: 13px; line-height: 1.75; }
+
+        .footer-links h4 { font-size: 16px; margin-bottom: 20px; font-weight: 600; }
+        .footer-links ul { list-style: none; }
+
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            display: block;
+            padding: 8px 0;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover { color: #22d3ee; }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: #e0e7ff;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .footer-content { grid-template-columns: 1fr; gap: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <a class="logo" href="/" style="display:flex;align-items:center;gap:10px;"><img src="/dendrons-mark.png" style="height:30px;width:30px;object-fit:contain;" alt="Dendrons.ai mark">Dendrons.ai</a>
+            <ul>
+                <li><a href="/#products">Products</a></li>
+                <li><a href="/labs">Labs</a></li>
+                <li><a href="/about" class="active">About</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="about-intro">
+        <canvas class="neuron-canvas" data-neuron-field data-theme="light" data-density="14" aria-hidden="true"></canvas>
+        <div class="container">
+            <h1>About Dendrons.ai</h1>
+            <p class="lead">Dendrons helps organisations know what AI they are running, and prove it is governed. Built for regulated financial institutions in Singapore, South East and South Asia, and for AI vendors who need to answer the AI due diligence questions their customers are asking.</p>
+        </div>
+    </div>
+
+    <section class="about-section">
+        <canvas class="neuron-canvas" data-neuron-field data-theme="light" data-density="14" aria-hidden="true"></canvas>
+        <div class="container">
+            <div class="about-content">
+                <p class="credit">Supported by Google Cloud for Startups Ecosystem and an Anthropic Claude Partner Network Member.</p>
+
+                <h2>Our Founder</h2>
+
+                <p>Dendrons.ai was founded by <a href="https://niveditapandey.com/media" target="_blank">Nivedita Pandey</a>, an AI and Digital Innovation Leader with a Wharton MBA (Joseph Wharton Fellow) and a distinction in Computer Science Engineering. She started her career at HSBC building the trust and security infrastructure behind digital banking years before it became industry-standard - digital signatures, transaction signing, device identification, two-factor and out-of-band authentication - before spending 16 years building first-in-market digital products and platforms across US, UK and Asian markets, including an Asia-wide Private Capital vertical at Microsoft Singapore. Her work has been trusted by the Reserve Bank Innovation Hub, the World Bank, and India's Central and State governments as Prime Minister's Fellow, and recognised multiple times across the US, UK, Singapore and India.</p>
+
+                <p>In the recent past, Nivedita was invited to design and deliver AI envisioning sessions for public sector enterprises, working with ~600 civil servants and PSU executives to discover where AI actually fits inside public institutions. What she learned there - that institutions do not adopt AI until they can trust and audit it - shaped the thesis of Dendrons.ai, bringing her back to where she started: building trust infrastructure, this time for AI instead of digital banking. The same lens produced <a href="https://nitiscope.com" target="_blank">NitiScope</a>, a public procurement intelligence platform indexing 3.95 million Indian tenders and 3.17 million contract awards.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <canvas class="neuron-canvas" data-neuron-field data-theme="dark" data-density="12" aria-hidden="true"></canvas>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 style="display:flex;align-items:center;gap:10px;"><img src="/dendrons-mark.png" style="height:28px;width:28px;object-fit:contain;" alt="">Dendrons.ai</h3>
+                    <p class="footer-creds">Headquartered in Singapore.<br>Supported by Google Cloud for Startups Ecosystem.<br>Anthropic Claude Partner Network Member.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="https://steward.dendrons.ai" target="_blank" rel="noopener">Rein</a></li>
+                        <li><a href="https://compass.dendrons.ai" target="_blank" rel="noopener">Compass</a></li>
+                        <li><a href="/labs">Dendrons Labs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:np@dendrons.ai">np@dendrons.ai</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dendrons AI Pte. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/neuron-field.js"></script>
+</body>
+</html>
